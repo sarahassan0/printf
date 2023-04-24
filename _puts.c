@@ -7,15 +7,15 @@
  */
 int _puts(char *str)
 {
-        int i = 0;
+  int i = 0;
 
-        while (str[i] != '\0')
-        {
-                _putchar(str[i]);
-                i++;
-        }
-        _putchar('\n');
-        return (i + 1);
+  while (str[i] != '\0')
+    {
+      _putchar(str[i]);
+      i++;
+    }
+  _putchar('\n');
+  return (i + 1);
 }
 
 #include <unistd.h>
@@ -28,5 +28,5 @@ int _puts(char *str)
  */
 int _putchar(char c)
 {
-        return (write(1, &c, 1));
+  return (write(1, &c, 1));
 }
