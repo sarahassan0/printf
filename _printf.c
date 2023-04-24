@@ -43,6 +43,7 @@ int _printf(const char *format, ...)
 		else
 			printed = _putchar(format[i]);
 
+	}
 	va_end(args);
 	return (printed);
 }
