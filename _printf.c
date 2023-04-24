@@ -13,7 +13,6 @@ int _printf(const char *format, ...)
 
 	if (!format)
 		return (-1);
-
 	va_start(args, format);
 
 	for (i = 0; format && format[i] != '\0'; i++)
@@ -26,35 +25,25 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 				{
-					char c = va_arg(args, int);
-
-					printed = _putchar(c);
+					printed = _putchar(va_arg(args, int));
 					break;
 				}
 				case 's':
 				{
-					char *s = va_arg(args, char *);
-
-					printed = _puts(s);
+					printed = _puts(va_arg(args, char *));
 					break;
 				}
 				case '%':
 				{
-					_putchar('%');
-					printed++;
+					printed = _putchar('%');
 					break;
 				}
 			}
 		}
 		else
-		{
-			_putchar(format[i]);
-			printed++;
-		}
-	}
+			printed = _putchar(format[i]);
 
 	va_end(args);
-
 	return (printed);
 }
 
