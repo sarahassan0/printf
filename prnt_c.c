@@ -15,4 +15,4 @@ int prnt_c(va_list *args)
 	prntd += _putchar(va_arg(*args, int));
 
 	return (prntd);
-} 
+}
