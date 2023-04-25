@@ -1,50 +1,41 @@
 #include "main.h"
 
-
 /**
- * _printf - Printf function
- * @format: format.
- * Return: Printed chars.
+ * _printf - prints formatted output
+ * @format: format string
+ *
+ * Return: number of characters printed
  */
+
 int _printf(const char *format, ...)
 {
-	int i, printed = 0;
+	int prntd = 0, i = 0;
 	va_list args;
 
 	if (!format)
 		return (-1);
+
 	va_start(args, format);
 
-	for (i = 0; format && format[i] != '\0'; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
-			i++;
-
-			switch (format[i])
+			i++
+			if (format[i] == '\0')
 			{
-				case 'c':
-				{
-					printed += _putchar(va_arg(args, int));
-					break;
-				}
-				case 's':
-					printed += _puts(va_arg(args, char *));
-					break;
-				case '%':
-					printed += _putchar('%');
-					break;
-				default:
-					printed += _putchar('%');
-					printed += _putchar(format[i]);
-					break;
+				va_end(args);
+				return (-1);
 			}
+			prntd += get_precision(&format[i], &args);
 		}
 		else
-			printed += _putchar(format[i]);
-
+		{
+			prntd += _putchar(format[i]);
+		}
 	}
+
 	va_end(args);
-	return (printed);
+	return (prntd);
 }
 
