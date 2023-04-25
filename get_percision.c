@@ -23,7 +23,6 @@ int get_precision(const char *format, va_list *args)
 			break;
 		case 'd':
 		case 'i':
-			prntd = prnt_num(args);
 			break;
 		case '%':
 			prntd = _putchar('%');
