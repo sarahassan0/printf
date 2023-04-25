@@ -25,23 +25,23 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 				{
-					printed = _putchar(va_arg(args, int));
+					printed += _putchar(va_arg(args, int));
 					break;
 				}
 				case 's':
-				{
-					printed = _puts(va_arg(args, char *));
+					printed += _puts(va_arg(args, char *));
 					break;
-				}
 				case '%':
-				{
-					printed = _putchar('%');
+					printed += _putchar('%');
 					break;
-				}
+				default:
+					printed += _putchar('%');
+					printed += _putchar(format[i]);
+					break;
 			}
 		}
 		else
-			printed = _putchar(format[i]);
+			printed += _putchar(format[i]);
 
 	}
 	va_end(args);
