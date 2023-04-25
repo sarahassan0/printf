@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
  * prnt_str - function to print a string

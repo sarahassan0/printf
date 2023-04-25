@@ -8,7 +8,7 @@
  * Return: number of characters printed
  */
 
-int get_precision(char *format, va_list *args)
+int get_precision(const char *format, va_list *args)
 #include <unistd.h>
 {
 	int prntd = 0;
