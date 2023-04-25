@@ -7,7 +7,7 @@
  */
 int _puts(char *str)
 {
-	
+
 	int i = 0;
 
 	while (str[i] != '\0')
@@ -15,7 +15,7 @@ int _puts(char *str)
 	_putchar(str[i]);
 	i++;
 	}
-	
+
 	_putchar('\n');
 	return (i + 1);
 }
