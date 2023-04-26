@@ -1,4 +1,4 @@
-#inclue "main.h"
+#include "main.h"
 
 /**
  * prnt_int - prints an integer
@@ -20,7 +20,8 @@ int prnt_int(va_list * args)
 	}
 	else if (hex == 0 && oct == 1)
 	{
-		int decimal = convertOctal2Decimal(num);
+		int decimal = convertOctal
+			2Decimal(num);
 
 		prntd = _putchar(decimal);
 	}
