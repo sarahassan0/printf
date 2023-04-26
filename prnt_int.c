@@ -16,32 +16,46 @@ int prnt_int(va_list * args)
 
 	if (hex == 0 && oct == 0)
 	{
-		prntd = _putint(*num);
+		prntd = prnt_d(*num);
 	}
 	else if (hex == 0 && oct == 1)
 	{
 		int decimal = convertOctal2Decimal(*num);
 
-		prntd = _putint(decimal);
+		prntd = prnt_d(decimal);
 	}
 	else if (hex == 1 && oct == 0)
 	{
 		int decimal = convert2Hex(*num);
 
-		prntd = _putint(decimal);
+		prntd = prnt_d(decimal);
 	}
 
 	return (prntd);
 }
 
 /**
- * _putint - Writes an int to stdout
- * @c: The int to write
+ * prnt_d - prints an integer recursively
+ * @d: the integer to print
  *
- * Return: 1 on success, -1 on error
+ * Return: the number of characters printed
  */
-
-int _putint(int c)
+int prnt_d(int d)
 {
-	return (write(1, &c, sizeof(c));
+	int prntd = 0;
+
+	if (d < 0)
+	{
+		prntd += _putchar('-');
+		d = -d;
+	}
+
+	if (d / 10)
+	{
+		prntd += prnt_d(d / 10);
+	}
+
+	prntd += _putchar(d % 10 + '0');
+
+	return (prntd);
 }

@@ -8,7 +8,7 @@
 #include <ctype.h>
 
 
-int _putint(int c);
+int prnt_d(int d)int prnt_d(int d);
 int _printf(const char *format, ...);
 int _puts(char *str);
 int _putchar(char c);
