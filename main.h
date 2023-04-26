@@ -3,8 +3,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
+#include <math.h>
+#include <ctype.h>
 
 
+int _putint(int c);
 int _printf(const char *format, ...);
 int _puts(char *str);
 int _putchar(char c);

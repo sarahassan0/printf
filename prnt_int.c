@@ -1,4 +1,4 @@
-#include "main.h"
+#inclue "main.h"
 
 /**
  * prnt_int - prints an integer
@@ -11,19 +11,37 @@ int prnt_int(va_list * args)
 {
 	int prntd = 0;
 	int *num = va_arg(*args, int);
-	int oct = checkOctal(num);
+	int hex = isxdigit(*num);
+	int oct = checkOctal(*num);
 
-	if (oct == 1)
+	if (hex == 0 && oct == 0)
 	{
-		int decimal = convertOctal
-			2Decimal(num);
-
-		prntd = _putchar(decimal);
+		prntd = _putint(*num);
 	}
-	else if ( oct == 0)
+	else if (hex == 0 && oct == 1)
 	{
-		prntd = _putchar(num);
+		int decimal = convertOctal2Decimal(*num);
+
+		prntd = _putint(decimal);
+	}
+	else if (hex == 1 && oct == 0)
+	{
+		int decimal = convert2Hex(*num);
+
+		prntd = _putint(decimal);
 	}
 
 	return (prntd);
+}
+
+/**
+ * _putint - Writes an int to stdout
+ * @c: The int to write
+ *
+ * Return: 1 on success, -1 on error
+ */
+
+int _putint(int c)
+{
+	return (write(1, &c, sizeof(c));
 }
