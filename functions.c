@@ -46,37 +46,3 @@ int convertOctal2Decimal(int octal)
 
 	return (decimal);
 }
-
-/**
- * convert2Hex - converts a hexadecimal string to decimal
- * @hex: the hexadecimal string to convert
- *
- * Return: the decimal equivalent of the hexadecimal string
- */
-
-int convert2Hex(char hex[])
-{
-	int length = strlen(hex);
-	int i = 0;
-	int decimal = 0, b = 1;
-
-	for (i = length--; i >= 0; i--)
-	{
-		if (hex[i] >= '0' && hex[i] <= '9')
-		{
-			decimal += (hex[i] - 48) * b;
-			b *= 16;
-		}
-		else if (hex[i] >= 'A' && hex[i] <= 'F')
-		{
-			decimal += (hex[i] - 55) * b;
-			b *= 16;
-		}
-		else if (hex[i] >= 'a' && hex[i] <= 'f')
-		{
-			decimal += (hex[i] - 87) * b;
-			b *= 16;
-		}
-	}
-	return (decimal);
-}
