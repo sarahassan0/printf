@@ -1,5 +1,5 @@
 # Project: 0x11. C - printf
-printf project to simulate standard C printf
+Printf project aimed to simulate the standard C printf function
 
 ## Resources
 
